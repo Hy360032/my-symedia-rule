@@ -1,0 +1,200 @@
+# ============================================================
+# Symedia 自定义识别词（custom_words）· 整理版
+# 格式：左式(文件名文字/正则) => 右式(替换为片名 或 {[tmdbid=..;s;e]} 锁定)
+# 顺序保留（识别词可能有匹配优先级，勿随意打乱）
+# ============================================================
+# ── 一、锁定 TMDB / 季集计算（从文件名抓季集） ──
+#   · 流人 / Slow Horses：锁定 tmdbid 95480，防止被误识别成别的剧
+(?i)(Slow[ .]?Horses|流人[ .]?[(（]?[0-9]{4}) => {[tmdbid=95480;type=tv]}
+#   · 正则捕获与计算 (处理非标准季/集)
+密室大逃脱大神版(.*) => {[tmdbid=109096;type=tv]}\1
+Great[ .]?Escape[ .]?Super[ .]?Version => {[tmdbid=109096;type=tv]}
+密室大逃脱(.*) => {[tmdbid=89861;type=tv]}\1
+Great[ .]?Escape => {[tmdbid=89861;type=tv]}
+ESCAPE[ .]?It[ .]?Was[ .]?Supposed[ .]?to[ .]?be[ .]?a[ .]?Kidnapping => {[tmdbid=299799;type=tv]}
+Ore[. ]dake[. ]Level[. ]Up[. ]na[. ]Ken.S01E(1[3-9]|2[0-5]) => {[tmdbid=127532;type=tv;s=2;e=\1@-12]}
+\[MAL\][. ]Ore[. ]dake[. ]Level[. ]Up[. ]na[. ]Ken[. ]S2[. ]\[(0[1-9]|1[0-3])\] => {[tmdbid=127532;type=tv;s=2;e=\1]}
+(Solo[ .]?Leveling)[ .]S01E(1[3-9]|2[0-5])(.*) => {[tmdbid=127532;type=tv;s=2;e=\2@-12]}\3
+森林进化论\.加更\.Forest\.Evolutionism\.S02E(\d{2})\.Plus.* => {[tmdbid=230663;type=tv;s=0;e=\1@+1]}
+Yami\.Shibai\.S?(\d+)\.?E?(\d+) => {[tmdbid=56559;type=tv;s=\1;e=\2]}
+# ── 二、 字幕组 / 发布组 / 压制组 ──
+#   · 动画字幕组
+(?i)\b(SBSUB|銀色子彈字幕組|银色子弹字幕组)\b => 银色子弹字幕组
+(?i)\b(Nekomoe[ .]?kissaten|Nekomoe kisstan)\b => 喵萌奶茶屋
+(?i)\b(OPFansMaplesnow|OPFans枫雪动漫)\b => OPFans枫雪动漫
+(?i)\b(Sakurato|樱都字幕组|桜都字幕组|桜都|櫻都字幕組)\b => 桜都字幕组
+(?i)\b(Haruhana|❀拨雪寻春❀)\b => ❀拨雪寻春❀
+(?i)\b(PCSUB|波洛咖啡厅)\b => 波洛咖啡厅
+(?i)\b(Imoeer|启萌字幕组)\b => 启萌字幕组
+(?i)\b(KTXP|JYFanSub|極影字幕社)\b => 极影字幕社
+(?i)\b(YUI-7|西农YUI汉化组)\b => 西农YUI汉化组
+(?i)\b(STYHSub|霜庭云花Sub)\b => 霜庭云花Sub
+(?i)\b(DMMOESub|DMMSub|动漫萌Sub)\b => 动漫萌Sub
+(?i)\b(SWSUB|SW字幕组)\b => SW字幕组
+(?i)\b(Comicat|漫貓字幕社|漫貓字幕組|漫猫字幕组)\b => 漫猫字幕社
+(?i)\b(Romanticat|貓戀漢化組)\b => 猫恋汉化组
+(?i)\b(KissSub|愛戀字幕社)\b|\b爱恋\b|\b愛戀\b => 爱恋字幕社
+(?i)\b(CoolComic404|酷漫字幕组)\b|酷漫(?![\u4e00-\u9fa5]) => 酷漫字幕组
+(?i)\b(SumiSora|澄空學園)\b => 澄空学园
+(?i)\b(YYDM-11FANS|异域-11番小队)\b => 异域-11番小队
+(?i)\b(KitaujiSub|北宇治字幕组)\b => 北宇治字幕组
+(?i)\b(FYSub|楓葉字幕組)\b => 枫叶字幕组
+(?i)\b(YYSUB-RAW|夜莺家族)\b => 夜莺家族
+(?i)\b(Todokoi|届恋字幕组)\b => 届恋字幕组
+(?i)\b(HYSUB|幻櫻字幕組)\b => 幻樱字幕组
+(?i)\b(DMG|動漫國字幕組)\b => 动漫国字幕组
+(?i)\b(igsub|爱咕字幕组)\b => 爱咕字幕组
+(?i)\b(UHA-Wing|UHA-WINGS|悠哈璃羽字幕社)\b => 悠哈璃羽字幕社
+(?i)\b(H-BBR|氢气烤肉架)\b => 氢气烤肉架
+(?i)\b(BeanSub|豌豆字幕組)\b => 豌豆字幕组
+(?i)\b(FZSD|風之聖殿|风之圣殿)\b|(?<=[\W_x])FSD(?=[\W_x]) => 风之圣殿字幕组
+(?i)\b(MCE|MCE汉化组)\b => MCE汉化组
+(?i)\b(orion origin|猎户发布组)\b => 猎户发布组
+(?i)\b(Airota|千夏字幕組)\b => 千夏字幕组
+(?i)\b(Mabors Sub|MahoMabo)\b|魔穗字幕组|魔穗|幻之字幕组|幻之 => 魔穗字幕组&幻之字幕组
+(?i)\b(suzume Ryokosha|玲芽旅行团)\b => 玲芽旅行团
+(?i)\b(MingYSub|MingY)\b => MingYSub
+(?i)\b(XKsub|XK SPIRITS|星空字幕組)\b => 星空字幕组
+(?i)\b(CoolFansSub|冷番补完字幕组)\b|\b冷番补完\b => 冷番补完字幕组
+(?i)\b(Shirokoi|白恋字幕组)\b => 白恋字幕组
+(?i)\b(FLsnow|雪飄工作室|FLsnow\.feat\.PO)\b => 雪飘工作室
+(?i)\b(kamigami|诸神字幕组)\b => 诸神字幕组
+(?i)\b(bad sub|摆烂字幕组)\b => 摆烂字幕组
+(?i)\b(CASO|华盟字幕社)\b => 华盟字幕社
+(?i)\b(hyakuhuyu|百冬练习组)\b => 百冬练习组
+(?i)\b(S1YURICON|S1百综字幕组)\b => S1百综字幕组
+(?i)\b(heibaiSub|黑白字幕组)\b => 黑白字幕组
+(?i)\b(VanillaTrans|香子兰翻译同好会)\b => 香子兰翻译同好会
+(?i)\b(Suzu-Kaze|鈴風字幕組)\b => 鈴風字幕組
+(?i)\b(64bitsub|六四位元字幕組|六四位元字幕组)\b => 六四位元字幕组
+(?i)\b(TxxZ|天香字幕社)\b => 天香字幕社
+(?i)\b(EMD|恶魔岛字幕组)\b => 恶魔岛字幕组
+(?i)\b(TamersUnion|驯兽师联盟)\b => 驯兽师联盟
+(?i)\b(EnkanRec|圆环记录攻略组)\b => 圆环记录攻略组
+(?i)\b(MILKs|奶²)\b => 奶²
+(?i)\b(MoezakuraSub|萌樱字幕组)\b => 萌樱字幕组
+(?i)\b(YunFog|云歌字幕组)\b => 云歌字幕组
+(?i)\b(STK|生徒会字幕组)\b => 生徒会字幕组
+(?i)\b(Yumezukuri|织梦字幕组)\b => 织梦字幕组
+(?i)\Dont be a simp\b => 不当舔狗制作组
+\b康复中心\b => 康复中心字幕组
+(\[|【|&)Lemonade(】|]|&) => \1波子汽水汉化组\2
+(?i)\bLemonade\b => 波子汽水汉化组
+RoxyLib => 洛琪希图书馆
+DHR&MakariHoshiyume => DHR动研字幕组&茉语星梦
+MSRSub&Todokoi => 野生菌字幕组&届恋字幕组
+jibaketa => jibaketa-粤语版
+#   · PT / 压制组
+\[GM-Team\]\[国漫\] => [GM-Team]
+GPTHD => OurTV
+SeeWEB => OurTV
+CTRLHD => WiKi
+DreamHD => CHDWEB
+BlackTV => CHDWEB
+ColorTV => HHWEB
+Xiaomi => HDCTV
+Huawei => PTerWEB
+Momoweb => PTerWEB
+DDHDTV => QHStudio
+Xunlei => QHStudio
+NukeHD => QHStudio
+TagWeb => LeagueWEB
+ZeroTV => ADWeb
+ZerTV => ADWeb
+MiniHD => FRDS
+BitsTV => cXcY@FRDS
+ALT => BeiTai
+LelveTV => HHWEB
+BATWEB => HHWEB
+ParkTV => HDSWEB
+MarryTV => HHWEB
+ParkHD => HDSWEB
+QuickIO => ADWeb
+SONYHD => ADWeb
+DeePTV => ADWeb
+MAI => AISR
+CZ => AISR
+Ygm => AISR
+YGM => AISR
+TUDO&MAl => AISR
+# ── 三、 流媒体平台标识符 ──
+#   · 将有多种写法的平台拆分为独立规则，确保特殊机制被正确触发
+AppleTV\+ => -ATVP
+Apple\.TV\+ => -ATVP
+\bATVP\b => -ATVP
+CATCHPLAY\+ => -CATCHPLAY
+(?i)\bNF\b => -NF
+(?i)\bNetflix\b => -NF
+(?i)\bAMZN\b => -AMZN
+(?i)\bAmazon\b => -AMZN
+(?i)\bCR\b => -CR
+(?i)\bCrunchyroll\b => -CR
+(?i)\bDSNP\b => -DSNP
+(?i)\bDisney\+\b => -DSNP
+(?i)\bH?MAX\b => -MAX
+(?i)Paramount\+ => -PMSP
+#   · 单一写法的平台
+(?i)\b(Baha)\b => -Baha
+(?i)\b(KKTV)\b => -KKTV
+(?i)\b(Hami)\b => -Hami
+(?i)\b(Abema)\b => -Abema
+(?i)\b(B-Global)\b => -B-Global
+(?i)\b(Sentai)\b => -Sentai
+(?i)\b(MyVideo)\b => -MyVideo
+(?i)\b(MyTVSuper)\b => -MyTVSuper
+(?i)\b(Hulu)\b => -Hulu
+(?i)\b(TVING)\b => -TVING
+(?i)\b(LINETV)\b => -LINETV
+(?i)\b(Bilibili)\b => -Bilibili
+(?i)\b(IQ)\b => -IQ
+(?i)\b(Viu)\b => -Viu
+(?i)\b(CATCHPLAY)\b => -CatchPlay
+(?i)\b(playWEB)\b => -playWEB
+(?i)\b(friDay)\b => -friDay
+#   · 平台名称修正
+(?i)ViuTV => Viu
+(?i)HamiVideo => Hami
+#   · 特殊规则
+(?<=(1080p|2160p)\.)iT\. => -iTunes.
+# ── 四、 通用标识符 / 杂项 ──
+#   · 音视频标签
+(?<=[\W_])DV(?=[\W_]) => DoVi
+Running.Man => Running Man (2010)
+森林进化论2025 => 森林进化论
+少年歌行 血染天启篇 => 少年歌行 (2018)
+Talk.Show => 脱口秀大会 (2017)
+一念永恒 第三季 => 一念永恒
+锦绣芳华 => 国色芳华
+东山晴后雪 第一季 => 东山晴后雪
+奥美迦奥特曼.日语版 => 奥���迦奥特曼
+一念永恒 => {[tmdbid=107371;type=tv;]}
+超时空要塞 Frontier => {[tmdbid=5857;type=tv;]}
+Smoke => {[tmdbid=215995;type=tv;]}
+Sono.Bisque.Doll.wa.Koi.wo.Suru => {[tmdbid=123249;type=tv;]}
+全员加速中2025 => {[tmdbid=114328;type=tv;]}
+Chihayafuru -Meguri- => {[tmdbid=284241;type=tv;]}
+华山论剑之九阴真经 => {[tmdbid=235351;type=tv;]}
+#   · 紫川动漫
+紫川.Eternal.Brotherhood.S02 => {[tmdbid=153869;s=2;type=tv]}
+#   · 苍兰诀 S02 => {[tmdbid=206534;s=2;type=tv]}
+Love.Between.Fairy.and.Devil => {[tmdbid=206534;type=tv;]}
+(?i)Kakuriyo[ ._-]?no[ ._-]?Yadomeshi[ ._-]?Ni => {[tmdbid=78483;type=tv;s=2]}
+Kingdom[ _]S6.*?\[([0-9]{2})\] => {[tmdbid=46437;type=tv;s=6;e=\1]}
+樱桃小丸子第二期.*?\[(\d{4})\] => {[tmdbid=57775;type=tv;s=2;e=\1]}
+哆啦A梦新番.*?\[(\d{3,4})\] => {[tmdbid=65733;type=tv;s=1;e=\1;title=New Doraemon (2005)]}
+ESCAPE.*?E(\d{1,2}) => {[tmdbid=299799;type=tv;s=1;e=\1;title=逃亡（那本该是绑架）]}
+Escape.*?E(\d{1,2}) => {[tmdbid=299799;type=tv;s=1;e=\1;title=逃亡（那本该是绑架）]}
+\[Marukazoku\]\[Chibi Maruko-chan II\]\[(\d{4})\].*? => {[tmdbid=57775;type=tv;s=2;e=\1]}
+Hell Mode - (\d{1,3}) .* => {[tmdbid=280049;type=tv;s=1;e=\1;title=地狱模式 ～喜欢速通游戏的玩家在废设定异世界无双～]}
+Yami[ .]Shibai[ .](\d+).*?\[(\d+)\] => {[tmdbid=56559;type=tv;s=\1;e=\2]}
+Hime-sama[. ]Goumon[. ]no[. ]Jikan[. ]desu[. ]-[ .](\d+) => {[tmdbid=229443;type=tv;s=2;e=\1@-12]}
+公主大人“拷问”时间到了[. ]-[ .](\d+) => {[tmdbid=229443;type=tv;s=2;e=\1@-12]}
+Fatestrange\.Fake\.S01E(\d+) => {[tmdbid=229858;type=tv;s=1;e=\1]}
+Yami[ .]Shibai[ .](\d+)[ .]-[ .](\d+) => {[tmdbid=56559;type=tv;s=\1;e=\2]}
+The\.Flowers\.of\.Evil\.S01E(\d+) => {[tmdbid=306640;type=tv;s=1;e=\1]}
+恶之华\.S01E(\d+) => {[tmdbid=306640;type=tv;s=1;e=\1]}
+\[Marukazoku\]\[Chibi Maruko-chan II\]\[(\d{2,4})\].*? => {[tmdbid=57775;type=tv;s=2;e=\1]}
+\[Marukazoku\]\[Chibi Maruko-chan I\]\[(\d{2,4})\].*? => {[tmdbid=57775;type=tv;s=1;e=\1]}
+(?i)Onaji[ ._-]+Zemi[ ._-]+no[ ._-]+Someya-san[ ._-]+ga[ ._-]+Sexy[ ._-]+Joyuu[ ._-]+Datta[ ._-]+Hanashi\.?[ ._-]*\[(\d{2})\] => {[tmdbid=325473;type=tv;s=1;e=\1]}
+(?i)(吞噬星空|Swallowed[ ._-]?Star)[ ._-]?S\d+E(\d+) => {[tmdbid=101172;type=tv;s=1;e=\2]}
+(?i)(凡人修仙传|A[ ._-]Record[ ._-]of[ ._-]a[ ._-]Mortal[']?s?[ ._-]Journey[ ._-]to[ ._-]Immortality) => {[tmdbid=106449;type=tv;]}

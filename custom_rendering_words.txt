@@ -1,0 +1,96 @@
+# ============================================================
+# Symedia 自定义渲染词（custom_rendering_words）· 整理版
+# 格式：左式(已识别字段/待规范化文字) => 右式(重写后)
+# 作用：对「识别结果」做修正——季集折叠、编码/画质/音频归一，不改原文件识别
+# ============================================================
+# ── 一、视频编码 / 画质归一（H.264/H.265 → AVC/HEVC；4K → 2160p） ──
+# 视频编码与格式标准化
+(?i)\.H\.264\. => .AVC.
+(?i)\.H\.265\. => .HEVC.
+(?i)\.H\.264(?=[\W_]) => .AVC
+(?i)\.H\.265(?=[\W_]) => .HEVC
+(?<=\.|_|\s)4[kK](?=\.|_|\s) => 2160p
+Ultra HDTV.Rip => UHDRip
+# ── 二、音频归一（Dolby Digital → DD / DDP） ──
+# 音频格式简化
+Dolby Digital Plus 2.0 => DDP2.0
+Dolby Digital Plus => DDP
+Dolby Digital 2.0 => DD2.0
+Dolby Digital => DD
+# ── 三、来源 / Rip 类型归一 ──
+# Rip 来源类型标准化
+WEB-DL\.Rip => WebRip
+BluRay\.Rip => BDRip
+DVD\.Rip => DVDRip
+# ── 四、流媒体平台清理（去平台前缀 / 多余 WEB-DL） ──
+# --- 清理不规范的流媒体词组 ---
+Crunchy\.Roll\. =>
+Amazon\.Prime\. =>
+AppleTV\. =>
+Netflix\. =>
+Disney\+\. =>
+IQ\.WEB-DL => WEB-DL
+KKTV\.WEB-DL => WEB-DL
+TVING\.WEB-DL => WEB-DL
+iTunes\.WEB-DL => WEB-DL
+friDay\.WEB-DL => WEB-DL
+MyTVSuper\.WEB-DL => WEB-DL
+# ── 五、季集重映射（把源多季折叠成 TMDB 单季绝对集号） ──
+# 说明：Symedia/TMDB 里这些番多按“单季绝对集号”，源却按 SxxExx 分季；下面把源季集折算成 S01 的绝对集。
+# 将关于我转生变成史莱姆这档事 E25-E48 折叠为 S02E01-E24
+@?{[tmdbid=82684;type=tv;e=25-48]} => {[s=2;e=EP-24]}
+# 将明日方舟 E17-E26 折叠为 S03E01-E10
+@?{[tmdbid=137065;type=tv;e=17-26]} => {[s=3;e=EP-16]}
+# 将咒术回战 S02E01-E23 折叠为 S01E25-E47
+@?{[tmdbid=95479;type=tv;s=2;e=1-23]} => {[s=1;e=EP+24]}
+# 将咒术回战 S03E01-E12 折叠为 S01E48-E59
+@?{[tmdbid=95479;type=tv;s=3;e=1-12]} => {[s=1;e=EP+47]}
+# 将Re:从零开始的异世界生活 S02E01-E25 折叠为 S01E26-E50
+@?{[tmdbid=65942;type=tv;s=2;e=1-25]} => {[s=1;e=EP+25]}
+# 将Re:从零开始的异世界生活 S03E01-E16 折叠为 S01E51-E66
+@?{[tmdbid=65942;type=tv;s=3;e=1-16]} => {[s=1;e=EP+50]}
+# 将Re:从零开始的异世界生活 S04E01-E19 折叠为 S01E67-E85
+@?{[tmdbid=65942;type=tv;s=4;e=1-19]} => {[s=1;e=EP+66]}
+# 将文豪野犬 S02E01-E13 折叠为 S01E25-E37
+@?{[tmdbid=65931;type=tv;s=2;e=1-13]} => {[s=1;e=EP+24]}
+# 将文豪野犬 S03E01-E12 折叠为 S01E38-E49
+@?{[tmdbid=65931;type=tv;s=3;e=1-12]} => {[s=1;e=EP+37]}
+# 将文豪野犬 S04E01-E13 折叠为 S01E50-E62
+@?{[tmdbid=65931;type=tv;s=4;e=1-13]} => {[s=1;e=EP+49]}
+# 将文豪野犬 S05E01-E11 折叠为 S01E63-E73
+@?{[tmdbid=65931;type=tv;s=5;e=1-11]} => {[s=1;e=EP+62]}
+# 将租借女友 S02E01-E12 折叠为 S01E13-E24
+@?{[tmdbid=96316;type=tv;s=2;e=1-12]} => {[s=1;e=EP+12]}
+# 将租借女友 S03E01-E12 折叠为 S01E25-E36
+@?{[tmdbid=96316;type=tv;s=3;e=1-12]} => {[s=1;e=EP+24]}
+# 将租借女友 S04E01-E12 折叠为 S01E37-E48
+@?{[tmdbid=96316;type=tv;s=4;e=1-12]} => {[s=1;e=EP+36]}
+# 将租借女友 S05E01-E12 折叠为 S01E49-E60
+@?{[tmdbid=96316;type=tv;s=5;e=1-12]} => {[s=1;e=EP+48]}
+# 将葬送的芙莉莲 S02E01-E10 折叠为 S01E29-E38
+@?{[tmdbid=209867;type=tv;s=2;e=1-10]} => {[s=1;e=EP+28]}
+# 将正相反的你与我 S02E01-E13 折叠为 S01E13-E25
+@?{[tmdbid=278043;type=tv;s=2;e=1-13]} => {[s=1;e=EP+12]}
+# 将防风少年 S02E01-E12 折叠为 S01E14-E25
+@?{[tmdbid=223500;type=tv;s=2;e=1-12]} => {[s=1;e=EP+13]}
+# 将公主殿下“拷问”的时间到了 S02E01-E12 折叠为 S01E13-E24
+@?{[tmdbid=229443;type=tv;s=2;e=1-12]} => {[s=1;e=EP+12]}
+# 将无名记忆 S02E01-E12 折叠为 S01E13-E24
+@?{[tmdbid=216272;type=tv;s=2;e=1-12]} => {[s=1;e=EP+12]}
+# 将胆大党 S02E01-E12 折叠为 S01E13-E24
+@?{[tmdbid=240411;type=tv;s=2;e=1-12]} => {[s=1;e=EP+12]}
+# 将革命机Valvrave S02E01-E12 折叠为 S01E13-E24
+@?{[tmdbid=52896;type=tv;s=2;e=1-12]} => {[s=1;e=EP+12]}
+# 将香格里拉边境 S02E01-E25 折叠为 S01E26-E50
+@?{[tmdbid=205050;type=tv;s=2;e=1-25]} => {[s=1;e=EP+25]}
+# 将超超超超超喜欢你的100个女朋友 S02E01-E12 折叠为 S01E13-E24
+@?{[tmdbid=223564;type=tv;s=2;e=1-12]} => {[s=1;e=EP+12]}
+# 将野生的大魔王出现了！ S02E01-E12 折叠为 S01E13-E24
+@?{[tmdbid=280042;type=tv;s=2;e=1-12]} => {[s=1;e=EP+12]}
+# ── 六、按标题(includes) 指定 TMDB / 季 ──
+# 青春猪头少年不会梦到圣诞服女郎
+@?{[includes=(?i)Seishun.Buta.Yarou.wa.Santa.Claus.no.Yume.wo.Minai]} => {[s=2]}
+# 柯南
+@?{[includes=CONAN&SBSUB]} => {[tmdbid=30983;type=tv]}
+# 将剧集 Candy 指定为糖果 (2026)，TMDB ID 311370
+@?{[includes=Candy.S01]} => {[tmdbid=311370;type=tv]}

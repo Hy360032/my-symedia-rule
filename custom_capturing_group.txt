@@ -1,0 +1,10 @@
+# ============================================================
+# Symedia 自定义捕获组（custom_capturing_groups）· 整理版
+# 格式：字段名#正则#
+#   作用：识别文件名时，用正则从文件名里『额外抽取出某个字段』并赋值（如发行地区 / 内容版本）
+#   注意：左式字段名 与 正则 用 # 包裹；Symedia 用 regex 引擎（支持变长后顾）
+# ============================================================
+# ── 一、发行地区 / production_country（只保留 3 位地区代码，减少 2 位的误匹配） ──
+production_country#((?<=[\W_]|^)(?:USA|CAN|MEX|BRA|ARG|GBR|IRL|JPN|KOR|SGP|MYS|THA|VNM|IDN|PHL|IND|EUR|FRA|DEU|GER|NLD|BEL|AUT|CHE|ITA|ESP|PRT|GRC|RUS|POL|CZE|HUN|ROU|UKR|TUR|SWE|NOR|FIN|DNK|AUS|NZL|ISR|IRN|ARE|SAU|ZAF|EGY|INT)(?=[\W_]|$))#
+# ── 二、内容版本 / edition（版本 / 剪辑 / 画幅 / 修复，不含地区） ──
+edition#(?i)((?<![A-Za-z])B&W(?![A-Za-z])|(?<![A-Za-z])Black[\._ -]*and[\._ -]*White(?![A-Za-z])|(?<![A-Za-z])Colour(?![A-Za-z])|(?<![A-Za-z])Color(?![A-Za-z])|PROPER|REPACK|RERIP|ENHANCED|IMAX[\._-]*Enhanced|IMAX|3D|3-D|3D版|三维版|立体版|Open[\._-]*Matte|extended[\._-]*edition|extended[\._-]*cut|extended|theatrical[\._-]*cut|theatrical|director'?s[\W_]*cut|directors[\W_]*cut|uncut|unrated|remastered|restored|院线版|公映版|加长版|导演剪辑版|导剪版|未删减版|未分级版|修复版|重制版|2K修复|4K修复|2K修复版|4K修复版|(?<![A-Za-z])DC(?![A-Za-z])|(?<![A-Za-z])EC(?![A-Za-z])|(?<![A-Za-z])TC(?![A-Za-z])|(?<![A-Za-z])UC(?![A-Za-z])|(?<![A-Za-z])CE(?![A-Za-z])|(?<![A-Za-z])CC(?![A-Za-z])|(?<![A-Za-z])CEE(?![A-Za-z])|Ultimate[\W_]*(?:Cut))#
