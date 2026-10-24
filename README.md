@@ -1,31 +1,55 @@
 # Symedia 自定义规则 · 个人版
 
-整理自个人 Symedia 实例（`/archive_settings`）的识别规则，共 **636 条有效规则**。
-结构参照 [shutu777/symedia-rule](https://github.com/shutu777/symedia-rule)，补充了「捕获组」一类。
-
-## 文件说明
-
-| 文件 | 规则数 | 说明 |
-|---|---|---|
-| `custom_words.txt` | 180 | 识别词：锁定 TMDB、抓季集、字幕组/发布组/平台归一 |
-| `custom_group.txt` | 402 | 制作组：流媒体、压制组、字幕组、RAW 源 |
-| `custom_rendering_words.txt` | 52 | 渲染词：编码/画质/音轨归一、季集重映射 |
-| `custom_capturing_group.txt` | 2 | 捕获组：发行地区、内容版本 |
-
-合计 636 条规则、52 行分段注释。
+整理自个人 Symedia 实例（`归档设置 → 辅助识别`）的识别规则，共 **636 条有效规则**。
+结构参照 [shutu777/symedia-rule](https://github.com/shutu777/symedia-rule)，补充了「自定义捕获组」一类。
 
 ## 订阅地址
 
-把对应链接填进 Symedia「归档设置 → 辅助识别」的订阅框：
+在 Symedia 的「归档设置 → 辅助识别」里，四个子标签各自有一个「远程链接」输入框。
+一行填一个链接，按下表分别填，不要混填。
+
+### 自定义识别词 → `custom_words.txt`
 
 ```text
-https://raw.githubusercontent.com/OWNER/REPO/refs/heads/main/custom_words.txt
-https://raw.githubusercontent.com/OWNER/REPO/refs/heads/main/custom_group.txt
-https://raw.githubusercontent.com/OWNER/REPO/refs/heads/main/custom_rendering_words.txt
-https://raw.githubusercontent.com/OWNER/REPO/refs/heads/main/custom_capturing_group.txt
+https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custom_words.txt
 ```
 
-填好后把「规则自动更新」的 cron 打开（默认 `30 2 * * *`），之后自动拉取。
+180 条。锁定 TMDB、从文件名抓季集、字幕组与发布组归一、流媒体平台打标。
+
+### 自定义制作组 → `custom_group.txt`
+
+```text
+https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custom_group.txt
+```
+
+402 条。流媒体平台、压制组、字幕组、RAW 源。
+
+### 自定义渲染词 → `custom_rendering_words.txt`
+
+```text
+https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custom_rendering_words.txt
+```
+
+52 条。编码与画质归一、音轨归一、季集重映射。
+
+### 自定义捕获组 → `custom_capturing_group.txt`
+
+```text
+https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custom_capturing_group.txt
+```
+
+2 条。发行地区 `production_country`、内容版本 `edition`。
+
+填好后把「规则自动更新」的 cron 留着（默认 `30 2 * * *`），之后每天自动拉取。
+
+## 文件与配置项对照
+
+| 文件 | 对应子标签 | 后端字段 | 条数 |
+|---|---|---|---|
+| `custom_words.txt` | 自定义识别词 | `keyword_links` | 180 |
+| `custom_group.txt` | 自定义制作组 | `release_group_links` | 402 |
+| `custom_rendering_words.txt` | 自定义渲染词 | `render_word_links` | 52 |
+| `custom_capturing_group.txt` | 自定义捕获组 | `capturing_group_links` | 2 |
 
 ## 格式约定
 
@@ -49,7 +73,7 @@ https://raw.githubusercontent.com/OWNER/REPO/refs/heads/main/custom_capturing_gr
 
 制作组：一行一个组名，顺序不影响识别。
 
-注释用 `#` 开头，不参与匹配。
+注释用 `#` 开头，不参与匹配。所有文件都是一行一条规则，别在一行里塞多条。
 
 ## 顺序很重要
 
