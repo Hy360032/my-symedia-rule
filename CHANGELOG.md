@@ -4,12 +4,12 @@
 
 ### 规则导入
 
-| 提交类型 | 内容 | 文件 | 条数 |
+| 提交类型 | 说明 | 文件 | 条数 |
 |---|---|---|---|
-| feat | 导入自定义识别词 | `custom_words.txt` | 180 |
-| feat | 导入自定义制作组 | `custom_group.txt` | 402 |
-| feat | 导入自定义渲染词 | `custom_rendering_words.txt` | 52 |
-| feat | 导入自定义捕获组 | `custom_capturing_group.txt` | 2 |
+| feat | 首次导出 Symedia 自定义识别词 | `custom_words.txt` | 180 |
+| feat | 首次导出 Symedia 自定义制作组 | `custom_group.txt` | 402 |
+| feat | 首次导出 Symedia 自定义渲染词 | `custom_rendering_words.txt` | 52 |
+| feat | 首次导出 Symedia 自定义捕获组 | `custom_capturing_group.txt` | 2 |
 
 合计 636 条有效规则。
 
@@ -23,4 +23,4 @@
 
 ### 基建
 
-- `feat` 加入 `.gitattributes` 锁定 LF 换行、`LICENSE`（MIT）、`.gitignore`
+- `feat` 首次导出时一并加入 `.gitattributes` 锁定 LF 换行、`LICENSE`（MIT）、`.gitignore`
