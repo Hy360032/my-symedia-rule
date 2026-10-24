@@ -1,7 +1,6 @@
 # Symedia 自定义规则 · 个人版
 
 整理自个人 Symedia 实例（`归档设置 → 辅助识别`）的识别规则，共 **636 条有效规则**。
-结构参照 [shutu777/symedia-rule](https://github.com/shutu777/symedia-rule)，补充了「自定义捕获组」一类。
 
 ## 订阅地址
 
