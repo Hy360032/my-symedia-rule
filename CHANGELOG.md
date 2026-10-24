@@ -24,6 +24,7 @@
 ### 新增
 
 - `feat` 新增二级分类规则 `mt_category.yaml`，电影 6 类、剧集 8 类，共 14 个分类
+- `feat` 收录转载版二级分类规则 `mt_category-ccdccf-v2.1.2.yaml`（作者 ccdccf@爱影，54 个分类，行尾统一为 LF）
 
 ### 基建
 

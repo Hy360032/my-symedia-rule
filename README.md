@@ -53,6 +53,17 @@ https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/mt_ca
 
 电影 6 类、剧集 8 类，共 14 个分类，按顺序自上而下匹配。
 
+### 转载版 → `mt_category-ccdccf-v2.1.2.yaml`
+
+作者 `ccdccf@爱影`，比自用版细致得多：54 个分类（电影 27 + 剧集 27），三级路径（如 `电影/华语电影/大陆地区电影`），额外支持 `year`、`series_keywords`、`series_actors` 字段。
+
+```text
+https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/mt_category-ccdccf-v2.1.2.yaml
+```
+
+**前提**：Symedia 版本需高于 `v1.0.52.20`。
+两份二选一粘贴，不要混用。
+
 ## 文件与配置项对照
 
 | 文件 | 对应位置 | 后端字段 | 条数 |
@@ -61,7 +72,8 @@ https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/mt_ca
 | `custom_group.txt` | 自定义制作组 | `release_group_links` | 402 |
 | `custom_rendering_words.txt` | 自定义渲染词 | `render_word_links` | 52 |
 | `custom_capturing_group.txt` | 自定义捕获组 | `capturing_group_links` | 2 |
-| `mt_category.yaml` | 二级分类 | 手动粘贴 | 14 个分类 |
+| `mt_category.yaml` | 二级分类（自用版） | 手动粘贴 | 14 个分类 |
+| `mt_category-ccdccf-v2.1.2.yaml` | 二级分类（转载版） | 手动粘贴 | 54 个分类 |
 
 ## 格式约定
 
