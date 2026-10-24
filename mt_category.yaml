@@ -1,0 +1,79 @@
+# ============================================================================
+# Symedia 媒体库分类规则（电影 + 剧集）
+# 匹配顺序：自上而下，先命中先用；条件留空的分类为兜底
+# 字段说明：
+#   不带 ? 前缀 = 且，必须同时满足
+#   带 ? 前缀   = 或，满足任意一条即可
+#   genre_ids 里的负数为排除项
+# ============================================================================
+
+movie:
+  # 1. 音乐现场：音乐类型，排除动画与纪录片
+  音乐现场:
+    genre_ids: "10402,-16,-35,-18"
+    keywords: >
+      演唱会,巡演,演出,交响乐,奇妙夜,歌剧,林忆莲,刘若英,喜乐会,音乐会,音乐剧,音乐·会,摇滚,
+      MV精选集,特别节目,美丽的呼声听证会,Live,郭富城,日本武道馆,Concert,Tour,Performance,Show,
+      Stage,现场,現場,巡迴,巡回,音乐节,音樂節,歌会,湾区升明月,音乐集,演奏,音乐秀,音乐盛宴,
+      Hatsune miku,少女时代,初音未来,魔法未来,米津玄师,跨年晚会,跨年演唱会,跨年,最美的夜,卫视
+
+  # 2. 纪录片电影：纪录片类型，排除音乐与动画
+  纪录片电影:
+    genre_ids: "99,-10402,-16"
+
+  # 3. 动画电影：动画类型，或关键词含 anime
+  动画电影:
+    ?genre_ids: "16"
+    ?include_keywords: "anime"
+
+  # 4. 华语电影：语言或地区命中其一即可
+  华语电影:
+    ?original_language: "zh,cn,yue,bo,ug"
+    ?origin_country: "CN,TW,HK,MO"
+
+  # 5. 亚太电影：排除战马，地区或语言属亚太
+  亚太电影:
+    keywords: "-战马"
+    ?origin_country: "JP,KR,IN,TH,VN,SG,MY,ID,PH,AU,NZ"
+    ?original_language: "ja,ko,hi,ta,te,kn,mr,gu,pa,id,th,ms,tl,vi"
+
+  # 6. 西方电影：兜底，接住前面全部未命中的影片
+  西方电影:
+
+tv:
+  # 1. 纪录片：纪录片类型，排除音乐与动画
+  纪录片:
+    genre_ids: "99,-10402,-16"
+
+  # 2. 国产动漫：动画类型，且语言或地区属华语
+  国产动漫:
+    genre_ids: "16"
+    ?original_language: "zh,cn,yue,bo,ug"
+    ?origin_country: "CN,TW,HK,MO"
+
+  # 3. 日本动漫：动画类型，且语言或地区属日本
+  日本动漫:
+    genre_ids: "16"
+    ?original_language: "ja"
+    ?origin_country: "JP"
+
+  # 4. 海外动漫：动画类型，兜住其余所有动画
+  海外动漫:
+    genre_ids: "16"
+
+  # 5. 综艺节目：综艺类型
+  综艺节目:
+    genre_ids: "10764,10767,10763"
+
+  # 6. 华语剧集：语言或地区命中其一即可
+  华语剧集:
+    ?original_language: "zh,cn,yue,bo,ug"
+    ?origin_country: "CN,TW,HK,MO"
+
+  # 7. 亚太剧集：地区或语言属亚太
+  亚太剧集:
+    ?origin_country: "JP,KR,IN,TH,VN,SG,MY,ID,PH,AU,NZ,KH"
+    ?original_language: "ja,ko,hi,ta,te,kn,mr,gu,pa,id,th,ms,tl,vi"
+
+  # 8. 西方剧集：兜底，接住前面全部未命中的剧集
+  西方剧集:

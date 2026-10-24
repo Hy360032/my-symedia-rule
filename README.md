@@ -41,14 +41,27 @@ https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custo
 
 填好后把「规则自动更新」的 cron 留着（默认 `30 2 * * *`），之后每天自动拉取。
 
+## 二级分类规则 → `mt_category.yaml`
+
+这一份不走「远程链接」，需要手动粘贴。
+
+在「归档设置 → 二级分类」里，把 `mt_category.yaml` 的全部内容整体覆盖进去。
+
+```text
+https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/mt_category.yaml
+```
+
+电影 6 类、剧集 8 类，共 14 个分类，按顺序自上而下匹配。
+
 ## 文件与配置项对照
 
-| 文件 | 对应子标签 | 后端字段 | 条数 |
+| 文件 | 对应位置 | 后端字段 | 条数 |
 |---|---|---|---|
 | `custom_words.txt` | 自定义识别词 | `keyword_links` | 180 |
 | `custom_group.txt` | 自定义制作组 | `release_group_links` | 402 |
 | `custom_rendering_words.txt` | 自定义渲染词 | `render_word_links` | 52 |
 | `custom_capturing_group.txt` | 自定义捕获组 | `capturing_group_links` | 2 |
+| `mt_category.yaml` | 二级分类 | 手动粘贴 | 14 个分类 |
 
 ## 格式约定
 

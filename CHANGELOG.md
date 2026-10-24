@@ -21,6 +21,10 @@
 
 - `docs` 订阅地址按四个子标签拆分，附文件与后端字段对照表 → `README.md`
 
+### 新增
+
+- `feat` 新增二级分类规则 `mt_category.yaml`，电影 6 类、剧集 8 类，共 14 个分类
+
 ### 基建
 
 - `feat` 首次导出时一并加入 `.gitattributes` 锁定 LF 换行、`LICENSE`（MIT）、`.gitignore`
