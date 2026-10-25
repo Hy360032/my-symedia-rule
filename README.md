@@ -41,6 +41,16 @@ https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custo
 
 填好后把「规则自动更新」的 cron 留着（默认 `30 2 * * *`），之后每天自动拉取。
 
+### 拉不动 raw 怎么办
+
+国内网络直连 `raw.githubusercontent.com` 会间歇性报 `SSL: UNEXPECTED_EOF_WHILE_READING`，连不上时换反代前缀即可，路径原样接在后面：
+
+```text
+https://ghfast.top/https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custom_words.txt
+```
+
+四个子标签都按这个办法加前缀。备选：`https://gh-proxy.com/`、`https://ghproxy.net/`；`cdn.jsdelivr.net/gh/Hy360032/my-symedia-rule@main/custom_words.txt` 也能用，但有约 12 小时缓存，刚推的改动不会立刻生效。
+
 ## 二级分类规则 → `mt_category.yaml`
 
 这一份不走「远程链接」，需要手动粘贴。
