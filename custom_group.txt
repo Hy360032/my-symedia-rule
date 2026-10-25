@@ -31,7 +31,7 @@ TVING
 Viu
 YouTube
 ViuTV
-# ── 二、压制/发布组（127）──
+# ── 二、压制/发布组（126）──
 Wiki
 LGNB@oSpecialCN
 HDHIVE
@@ -158,8 +158,7 @@ dislike@HDsky
 yoyola@CHDBits
 猎户发布组
 Audies
-SQFY
-# ── 三、字幕组/汉化组（161）──
+# ── 三、字幕组/汉化组（152）──
 冷番补完字幕组
 白恋字幕组
 CoolFansSub
@@ -312,7 +311,7 @@ jibaketa-粤语版
 隣天使字幕组
 香子兰翻译同好会
 黑白字幕组
-# ── 四、RAW/个人源（68）──
+# ── 四、RAW/个人源（79）──
 Mo Cuishle
 SCDIY
 Ftang
@@ -320,6 +319,7 @@ WF
 AY
 SC
 404
+SQFY
 TX
 SalmonWeb
 KING哥
@@ -391,7 +391,7 @@ hydes
 mawen1250
 一只出格君
 老K
-# ── 五、综合制作&修复组（19）──
+# ── 五、综合制作&修复组（18）──
 BaiTeWan.maru
 BTW-M
 BTWM
