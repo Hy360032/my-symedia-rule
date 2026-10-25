@@ -64,6 +64,32 @@ https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/mt_ca
 **前提**：Symedia 版本需高于 `v1.0.52.20`。
 两份二选一粘贴，不要混用。
 
+## 自定义通知模板 → `notify-*.j2`
+
+这两份也不走订阅，需要手动粘贴。位置在「工具箱 → 自定义通知模板」，两个通道各一个文本框，别混填。
+
+粘贴时整份文件内容原样贴进去即可（`title` 与 `text` 两个键都在里面）。
+
+### 归档通知 → `notify-transfer_task-symedia-v2.3.j2`
+
+```text
+https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/notify-transfer_task-symedia-v2.3.j2
+```
+
+正文 10884 字。入库一条通知依次给：标题、评分、媒体类型、归类、质量、规格、文件数、大小、TMDB ID、发布组、用时、简介、TMDB/豆瓣/IMDb 三行外链，最后一句评语。
+
+评语按分辨率、来源、色彩、体积、速度、评分分档；字段为空的行整行不输出。
+
+### Emby 通知 → `notify-emby_mediamsg-symedia-v2.j2`
+
+```text
+https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/notify-emby_mediamsg-symedia-v2.j2
+```
+
+正文 5157 字。按事件分流：新入库、开始播放、停止播放、登录成功、登录失败、标记了、测试。播放类另带进度、来源 IP、播放设备、用户。
+
+外链同样各占一行，无链接时整块不输出。
+
 ## 文件与配置项对照
 
 | 文件 | 对应位置 | 后端字段 | 条数 |
@@ -74,6 +100,8 @@ https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/mt_ca
 | `custom_capturing_group.txt` | 自定义捕获组 | `capturing_group_links` | 2 |
 | `mt_category.yaml` | 二级分类（自用版） | 手动粘贴 | 14 个分类 |
 | `mt_category-ccdccf-v2.1.2.yaml` | 二级分类（转载版） | 手动粘贴 | 54 个分类 |
+| `notify-transfer_task-symedia-v2.3.j2` | 自定义通知模板（归档） | `transfer_task` | 10884 字 |
+| `notify-emby_mediamsg-symedia-v2.j2` | 自定义通知模板（Emby） | `emby_mediamsg` | 5157 字 |
 
 ## 格式约定
 

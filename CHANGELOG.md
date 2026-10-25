@@ -1,5 +1,15 @@
 # 更新日志
 
+## 2026-10-25 通知模板
+
+| 提交类型 | 说明 | 文件 | 字数 |
+|---|---|---|---|
+| feat | 首次导出 Symedia 归档通知模板 | `notify-transfer_task-symedia-v2.3.j2` | 10884 |
+| feat | 首次导出 Symedia Emby 通知模板 | `notify-emby_mediamsg-symedia-v2.j2` | 5157 |
+| docs | README 补通知模板两个通道、订阅说明与字段对照 | `README.md` | — |
+
+两份均为现网在用的版本，行尾 LF，与 Symedia「自定义通知模板」里的配置逐字一致。
+
 ## 2026-10-24 首次发布
 
 ### 规则导入
