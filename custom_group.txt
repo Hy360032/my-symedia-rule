@@ -31,7 +31,7 @@ TVING
 Viu
 YouTube
 ViuTV
-# ── 二、压制/发布组（126）──
+# ── 二、压制/发布组（127）──
 Wiki
 LGNB@oSpecialCN
 HDHIVE
@@ -158,6 +158,7 @@ dislike@HDsky
 yoyola@CHDBits
 猎户发布组
 Audies
+SQFY
 # ── 三、字幕组/汉化组（161）──
 冷番补完字幕组
 白恋字幕组
