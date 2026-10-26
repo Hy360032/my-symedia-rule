@@ -311,7 +311,7 @@ jibaketa-粤语版
 隣天使字幕组
 香子兰翻译同好会
 黑白字幕组
-# ── 四、RAW/个人源（79）──
+# ── 四、RAW/个人源（78）──
 Mo Cuishle
 SCDIY
 Ftang
@@ -320,7 +320,6 @@ AY
 SC
 404
 SQFY
-TX
 SalmonWeb
 KING哥
 Minidoracat
