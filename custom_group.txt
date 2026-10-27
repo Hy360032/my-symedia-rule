@@ -32,7 +32,6 @@ Viu
 YouTube
 ViuTV
 # ── 二、压制/发布组（126）──
-Wiki
 LGNB@oSpecialCN
 HDHIVE
 HiveWeb
