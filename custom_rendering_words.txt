@@ -94,3 +94,5 @@ MyTVSuper\.WEB-DL => WEB-DL
 @?{[includes=CONAN&SBSUB]} => {[tmdbid=30983;type=tv]}
 # 将剧集 Candy 指定为糖果 (2026)，TMDB ID 311370
 @?{[includes=Candy.S01]} => {[tmdbid=311370;type=tv]}
+# 青之箱 / Blue Box (tmdb 207347)：TMDB仅1季37集，第25集为季中大结局；源第二段标S2→折回S1绝对集号(EP+25)
+@?{[tmdbid=207347;type=tv;s=2;e=1-12]} => {[s=1;e=EP+25]}
