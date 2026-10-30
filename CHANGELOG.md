@@ -1,5 +1,9 @@
 # 更新日志
 
+## 2026-10-30 制作组补一条
+
+- `feat` 新增制作组 `PFWEB`（401 → 402 条），四类合计 635 → 636 条 → `custom_group.txt`
+
 ## 2026-10-28 二级分类同步线上
 
 - `fix` 同步线上 `category.yaml` → `mt_category.yaml`：音乐现场关键词移除 `歌剧`，新增 `皇家阿尔伯特` / `Royal Albert Hall`
