@@ -144,6 +144,7 @@ UBits
 UNTOUCHED
 VCB-Studio
 WiKi
+Wiki
 Xrip
 Zero-Raws
 Beans@CHDBits

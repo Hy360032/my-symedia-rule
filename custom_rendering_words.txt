@@ -98,3 +98,5 @@ MyTVSuper\.WEB-DL => WEB-DL
 @?{[tmdbid=207347;type=tv;s=2;e=1-12]} => {[s=1;e=EP+25]}
 # 狐妖小红娘 (tmdb 75787)：TMDB 单季；源标 S13 → 折回 S1 绝对集号(EP+167)
 @?{[tmdbid=75787;type=tv;s=13;e=1-24]} => {[s=1;e=EP+167]}
+# 药屋少女的呢喃 (tmdb 220542)：源标 S2 的24集 = 总第25-48集，折回 S1(EP+24)
+@?{[tmdbid=220542;type=tv;s=2;e=1-24]} => {[s=1;e=EP+24]}
