@@ -158,7 +158,7 @@ dislike@HDsky
 yoyola@CHDBits
 猎户发布组
 Audies
-# ── 三、字幕组/汉化组（153）──
+# ── 三、字幕组/汉化组（154）──
 冷番补完字幕组
 白恋字幕组
 CoolFansSub
@@ -312,6 +312,7 @@ jibaketa-粤语版
 香子兰翻译同好会
 黑白字幕组
 种族骑士团
+今晚月色真美
 # ── 四、RAW/个人源（78）──
 Mo Cuishle
 SCDIY
