@@ -25,6 +25,8 @@ WEB-DL\.Rip => WebRip
 BluRay\.Rip => BDRip
 DVD\.Rip => DVDRip
 TV\.Rip => TVRip
+# 原文件名明确标注 TVRip 时保留来源，不影响普通 TV
+@?{[includes=(?i)(?<![A-Za-z])TVRip(?![A-Za-z])]} => {[resourceType=TVRip]}
 # ── 四、流媒体平台清理（去平台前缀 / 多余 WEB-DL） ──
 # --- 清理不规范的流媒体词组 ---
 Crunchy\.Roll\. =>

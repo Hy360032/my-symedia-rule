@@ -1,5 +1,9 @@
 # 更新日志
 
+## 2026-11-07 按原始 TVRip 标签保留来源
+
+- `fix` 新增高级渲染词：原文件名含独立 TVRip 标签时设 `resourceType=TVRip`，不将普通 TV 全局替换；渲染词 58 → 59，合计 647 → 648。
+
 ## 2026-11-07 补充 TVRip 渲染规则
 
 - `feat` 在 `custom_rendering_words.txt` 的来源 / Rip 类型归一段新增 `TV\.Rip => TVRip`；渲染词 57 → 58 条，四类合计 646 → 647 条。
