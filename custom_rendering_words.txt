@@ -24,6 +24,7 @@ Dolby Digital => DD
 WEB-DL\.Rip => WebRip
 BluRay\.Rip => BDRip
 DVD\.Rip => DVDRip
+TV\.Rip => TVRip
 # ── 四、流媒体平台清理（去平台前缀 / 多余 WEB-DL） ──
 # --- 清理不规范的流媒体词组 ---
 Crunchy\.Roll\. =>

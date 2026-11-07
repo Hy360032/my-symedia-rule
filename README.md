@@ -1,6 +1,6 @@
 # Symedia 自定义规则 · 个人版
 
-整理自个人 Symedia 实例（`归档设置 → 辅助识别`）的识别规则，共 **646 条有效规则**。
+整理自个人 Symedia 实例（`归档设置 → 辅助识别`）的识别规则，共 **647 条有效规则**。
 
 ## 订阅地址
 
@@ -29,7 +29,7 @@ https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custo
 https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custom_rendering_words.txt
 ```
 
-57 条。编码与画质归一、音轨归一、季集重映射。
+58 条。编码与画质归一、音轨归一、季集重映射。
 
 ### 自定义捕获组 → `custom_capturing_group.txt`
 
@@ -106,7 +106,7 @@ https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/notif
 |---|---|---|---|
 | `custom_words.txt` | 自定义识别词 | `keyword_links` | 181 |
 | `custom_group.txt` | 自定义制作组 | `release_group_links` | 406 |
-| `custom_rendering_words.txt` | 自定义渲染词 | `render_word_links` | 57 |
+| `custom_rendering_words.txt` | 自定义渲染词 | `render_word_links` | 58 |
 | `custom_capturing_group.txt` | 自定义捕获组 | `capturing_group_links` | 2 |
 | `mt_category.yaml` | 二级分类（自用版） | 手动粘贴 | 14 个分类 |
 | `mt_category-ccdccf-v2.1.2.yaml` | 二级分类（转载版） | 手动粘贴 | 54 个分类 |
