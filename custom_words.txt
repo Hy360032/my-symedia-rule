@@ -19,6 +19,7 @@ Ore[. ]dake[. ]Level[. ]Up[. ]na[. ]Ken.S01E(1[3-9]|2[0-5]) => {[tmdbid=127532;t
 Yami\.Shibai\.S?(\d+)\.?E?(\d+) => {[tmdbid=56559;type=tv;s=\1;e=\2]}
 # ── 二、 字幕组 / 发布组 / 压制组 ──
 #   · 动画字幕组
+(?i)\bPPX字幕组\b => 琵琶行字幕组
 (?i)\b(SBSUB|銀色子彈字幕組|银色子弹字幕组)\b => 银色子弹字幕组
 (?i)\b(Nekomoe[ .]?kissaten|Nekomoe kisstan)\b => 喵萌奶茶屋
 (?i)\b(OPFansMaplesnow|OPFans枫雪动漫)\b => OPFans枫雪动漫

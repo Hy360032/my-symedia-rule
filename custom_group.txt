@@ -31,7 +31,7 @@ TVING
 Viu
 YouTube
 ViuTV
-# ── 二、压制/发布组（126）──
+# ── 二、压制/发布组（127）──
 LGNB@oSpecialCN
 HDHIVE
 HiveWeb
@@ -158,7 +158,8 @@ dislike@HDsky
 yoyola@CHDBits
 猎户发布组
 Audies
-# ── 三、字幕组/汉化组（154）──
+FGTWeb
+# ── 三、字幕组/汉化组（155）──
 冷番补完字幕组
 白恋字幕组
 CoolFansSub
@@ -313,6 +314,7 @@ jibaketa-粤语版
 黑白字幕组
 种族骑士团
 今晚月色真美
+琵琶行字幕组
 # ── 四、RAW/个人源（78）──
 Mo Cuishle
 SCDIY
