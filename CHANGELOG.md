@@ -3,7 +3,8 @@
 ## 2026-11-07 整理 HDTV 来源归一
 
 - 将 `Ultra HDTV.Rip => UHDRip` 原样移至「三、来源 / Rip 类型归一」。
-- 新增独立 HDTV 标记到 HDTVRip 的大小写忽略规则，避免重复改写 HDTVRip，并保留 Ultra HDTV.Rip 优先转换；渲染词 59 → 60，合计 648 → 649。
+- 新增 `HDTV => HDTVRip`，按用户要求与相邻规则统一为简单替换格式；`Ultra HDTV.Rip => UHDRip` 排在其前。渲染词 59 → 60，合计 648 → 649。
+- 简单替换不带边界保护：已有 `HDTVRip` 若再次经过该规则可能变成 `HDTVRipRip`，未验证实际归档效果。
 
 ## 2026-11-07 按原始 TVRip 标签保留来源
 
