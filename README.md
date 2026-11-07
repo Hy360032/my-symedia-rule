@@ -1,6 +1,6 @@
 # Symedia 自定义规则 · 个人版
 
-整理自个人 Symedia 实例（`归档设置 → 辅助识别`）的识别规则，共 **648 条有效规则**。
+整理自个人 Symedia 实例（`归档设置 → 辅助识别`）的识别规则，共 **649 条有效规则**。
 
 ## 订阅地址
 
@@ -29,7 +29,7 @@ https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custo
 https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custom_rendering_words.txt
 ```
 
-59 条。编码与画质归一、音轨归一、季集重映射。
+60 条。编码与画质归一、音轨归一、季集重映射。
 
 ### 自定义捕获组 → `custom_capturing_group.txt`
 

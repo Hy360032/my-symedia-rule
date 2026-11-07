@@ -1,5 +1,10 @@
 # 更新日志
 
+## 2026-11-07 整理 HDTV 来源归一
+
+- 将 `Ultra HDTV.Rip => UHDRip` 原样移至「三、来源 / Rip 类型归一」。
+- 新增独立 HDTV 标记到 HDTVRip 的大小写忽略规则，避免重复改写 HDTVRip，并保留 Ultra HDTV.Rip 优先转换；渲染词 59 → 60，合计 648 → 649。
+
 ## 2026-11-07 按原始 TVRip 标签保留来源
 
 - `fix` 新增高级渲染词：原文件名含独立 TVRip 标签时设 `resourceType=TVRip`，不将普通 TV 全局替换；渲染词 58 → 59，合计 647 → 648。

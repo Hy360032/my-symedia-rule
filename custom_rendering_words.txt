@@ -12,7 +12,6 @@
 (?i)\.H\.264(?=[\W_]) => .AVC
 (?i)\.H\.265(?=[\W_]) => .HEVC
 (?<=\.|_|\s)4[kK](?=\.|_|\s) => 2160p
-Ultra HDTV.Rip => UHDRip
 # ── 二、音频归一（Dolby Digital → DD / DDP） ──
 # 音频格式简化
 Dolby Digital Plus 2.0 => DDP2.0
@@ -21,6 +20,8 @@ Dolby Digital 2.0 => DD2.0
 Dolby Digital => DD
 # ── 三、来源 / Rip 类型归一 ──
 # Rip 来源类型标准化
+Ultra HDTV.Rip => UHDRip
+(?i)(?<![A-Za-z])HDTV(?![A-Za-z]|\.Rip) => HDTVRip
 WEB-DL\.Rip => WebRip
 BluRay\.Rip => BDRip
 DVD\.Rip => DVDRip
