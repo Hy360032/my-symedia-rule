@@ -20,8 +20,8 @@ Dolby Digital 2.0 => DD2.0
 Dolby Digital => DD
 # ── 三、来源 / Rip 类型归一 ──
 # Rip 来源类型标准化
-Ultra HDTV.Rip => UHDRip
-HDTV => HDTVRip
+Ultra HDTV\.Rip => UHDRip
+HDTV\.Rip => HDTVRip
 WEB-DL\.Rip => WebRip
 BluRay\.Rip => BDRip
 DVD\.Rip => DVDRip
