@@ -1,6 +1,6 @@
 # Symedia 自定义规则 · 个人版
 
-整理自个人 Symedia 实例（`归档设置 → 辅助识别`）的识别规则，共 **649 条有效规则**。
+整理自个人 Symedia 实例（`归档设置 → 辅助识别`）的识别规则，共 **650 条有效规则**。
 
 ## 订阅地址
 
@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custo
 https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custom_group.txt
 ```
 
-406 条。流媒体平台、压制组、字幕组、RAW 源。
+407 条。流媒体平台、压制组、字幕组、RAW 源。
 
 ### 自定义渲染词 → `custom_rendering_words.txt`
 

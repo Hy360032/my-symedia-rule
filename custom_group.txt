@@ -159,7 +159,7 @@ yoyola@CHDBits
 猎户发布组
 Audies
 FGTWeb
-# ── 三、字幕组/汉化组（155）──
+# ── 三、字幕组/汉化组（156）──
 冷番补完字幕组
 白恋字幕组
 CoolFansSub
@@ -315,6 +315,7 @@ jibaketa-粤语版
 种族骑士团
 今晚月色真美
 琵琶行字幕组
+ZERO字幕组
 # ── 四、RAW/个人源（78）──
 Mo Cuishle
 SCDIY
