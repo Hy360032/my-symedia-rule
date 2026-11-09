@@ -55,6 +55,7 @@ tv:
     genre_ids: "16"
     ?original_language: "ja"
     ?origin_country: "JP"
+    ?keywords: "不擅交际的未亡人雪女与诅咒戒指"
 
   # 4. 海外动漫：动画类型，兜住其余所有动画
   海外动漫:
