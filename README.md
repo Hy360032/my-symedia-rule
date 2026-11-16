@@ -1,6 +1,6 @@
 # Symedia 自定义规则 · 个人版
 
-整理自个人 Symedia 实例（`归档设置 → 辅助识别`）的识别规则，共 **650 条有效规则**。
+整理自个人 Symedia 实例（`归档设置 → 辅助识别`）的识别规则，共 **651 条有效规则**。
 
 ## 订阅地址
 
@@ -13,7 +13,7 @@
 https://raw.githubusercontent.com/Hy360032/my-symedia-rule/refs/heads/main/custom_words.txt
 ```
 
-181 条。锁定 TMDB、从文件名抓季集、字幕组与发布组归一、流媒体平台打标。
+182 条。锁定 TMDB、从文件名抓季集、字幕组与发布组归一、流媒体平台打标。
 
 ### 自定义制作组 → `custom_group.txt`
 
