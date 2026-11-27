@@ -20,6 +20,8 @@
 (?i)\.H\.264(?=[\W_]) => .AVC
 (?i)\.H\.265(?=[\W_]) => .HEVC
 (?<=\.|_|\s)4[kK](?=\.|_|\s) => 2160p
+# HFR（高帧率）补 60fps，保留 HFR 字样；已有 60fps 时不重复
+(?i)(?<![A-Za-z])HFR(?![A-Za-z])(?!\.?60fps) => HFR.60fps
 # ── 二、音频归一（Dolby Digital → DD / DDP） ──
 # 音频格式简化
 Dolby Digital Plus 2.0 => DDP2.0
